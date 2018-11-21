@@ -1,0 +1,7 @@
+<svg:g
+  id="main"
+  [attr.fill]="fillColor"
+  [attr.transform]="getTranslate()"
+  mwlDroppable (drop)="dragEnd($event)"
+  [attr.x]="originX" [attr.y]="originY">
+</svg:g>

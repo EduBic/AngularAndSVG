@@ -1,0 +1,12 @@
+
+
+.selected {
+  fill: rgba(0, 0, 0, 0.2);
+  stroke-width: 1;
+  stroke: #0099ff;
+}
+
+.selectable:hover {
+  stroke-width: 1;
+  stroke: #0099ff;
+}

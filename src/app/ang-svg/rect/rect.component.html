@@ -1,0 +1,11 @@
+<svg:g
+  attr.transform="translate({{ originX }}, {{ originY }})"
+  [attr.width]="width" [attr.height]="height">
+
+  <svg:rect id="rect" x="0" y="0" [attr.width]="width" [attr.height]="height"/>
+  <svg:text [attr.x]="width / 2" [attr.y]="height / 2"
+   dominant-baseline="central" text-anchor="middle" alignment-baseline="central" fill="#">
+    {{ content }}
+  </svg:text>
+
+</svg:g>

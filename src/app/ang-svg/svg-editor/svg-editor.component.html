@@ -1,0 +1,72 @@
+<div style="display: flex">
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" id="main-svg" width="600" height="600">
+
+        <!-- Utils SVG -->
+        <defs>
+          <pattern id="smallGrid" width="8" height="8" patternUnits="userSpaceOnUse">
+            <path d="M 8 0 L 0 0 0 8" fill="none" stroke="gray" stroke-width="0.5" />
+          </pattern>
+          <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <rect width="80" height="80" fill="url(#smallGrid)" />
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="gray" stroke-width="1" />
+          </pattern>
+        </defs>
+
+        <rect width="100%" height="100%" fill="url(#grid)" />
+
+        <g #group id="svg-wrapper">
+
+          <!-- CONTENT -->
+          <!-- <svg:g app-rect class="selectable"
+            x="150" y="150" width="200" height="200" content="Hello World" (click)="selectElem($event)" fill="rgb(0,125,0, 0.2)" /> -->
+
+          <!-- <svg:g app-rect class="selectable"
+            mwlDroppable (drop)="drop($event.dropData)"
+            x="50" y="50" width="100" height="100" (click)="selectElem($event)" fill="rgb(0,125,125, 0.2)" /> -->
+
+          <!-- <ellipse class="selectable" fill="rgb(190,50,20,0.2)" cx="500" cy="500" rx="50" ry="50"
+            transform="translate(3.44574)" /> -->
+
+          <!-- <svg:g app-item class="selectable"
+            (click)="selectElem($event)" fill="rgb(160,160,0, 0.2)"/> -->
+
+          <!-- <polyline points="0,0 100,100" fill="none" stroke="black" /> -->
+
+          <svg:g app-rect
+            class="selectable"
+            (click)="selectElem($event)"
+            [originX]="415" [originY]="130"
+          />
+
+          <svg:g app-group-items
+            class="selectable"
+            (click)="selectElem($event)"
+            fill="rgba(102, 204, 255, 0.8)"
+            [originX]="400" [originY]="200"
+            [outputX]="100" [outputY]="100" />
+
+          <svg:g app-custom-shape
+            class="selectable"
+            (click)="selectElem($event)"
+            [originX]="335" [originY]="275"
+          />
+
+          <!-- <svg:g app-html-group-items
+            [originX]="400" [originY]="200"
+            [outputX]="100" [outputY]="100" /> -->
+
+        </g>
+
+      </svg>
+
+      <div>
+        <p *ngIf="selection">Selection: {{ selection.getAttribute('transform') }}</p>
+      </div>
+    </div>
+
+    <div style="padding: 1%">
+      <app-color-store></app-color-store>
+    </div>
+
+  </div>

@@ -1,0 +1,11 @@
+<svg:g>
+
+  <svg:circle *ngFor="let item of items; let i = index"
+    [attr.cx]="getCx(i)"
+    [attr.cy]="getCy(i)"
+    [attr.r]="diameter / 2" >
+  </svg:circle>
+
+
+
+</svg:g>
